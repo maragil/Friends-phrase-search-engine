@@ -6,16 +6,39 @@ import { useState } from 'react';
 function App() {
   /* VARIABLES ESTADO (DATOS) */
   const [allData, setAllData] = useState(phrases);
-  const [searchQuote, setSearchQuote] = useState('');
-  const [filterCharacter, setFilterCharacter] = useState('all');
+  const [searchQuote, setSearchQuote] = useState('');//búsqueda por cita
+  const [filterCharacter, setFilterCharacter] = useState('all');//filtro por personaje
+  const [newQuote, setNewQuote] = useState({ //nueva frase + personaje
+    quote: '',
+    character: '',
+  });
+  // const [errorMsg, setErrorMsg] = useState('')
 
   /* FUNCIONES HANDLER */
   const handleFilterQuote = (ev) => {
     setSearchQuote(ev.target.value);
   };
+
   const handleFilterCharacter = (ev) => {
+    ev.preventDefault();
     setFilterCharacter(ev.target.value);
   };
+
+  const handleNewQuote = (ev) => {
+    setNewQuote({...newQuote, [ev.target.id] : ev.target.value})
+  };
+
+  const handleClick = (ev) => {
+    ev.preventDefault();
+      if (newQuote.quote !== '' && newQuote.character !== ''){
+        setAllData([...allData, newQuote]);//quédate con lo q ya tienes y añade newQuote
+        setNewQuote ({quote: "", character: "",});//limpia los inputs
+      }else{
+      const errorMsg = 'Tienes que rellenar los dos campos';
+      console.log(errorMsg);
+    }
+  }
+
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
   const renderList = () => {
     return allData
@@ -75,6 +98,31 @@ function App() {
         <section>
           <ul className='ul'>{renderList()}</ul>
         </section>
+        {/* new phrase */}
+        <form>
+          <h2 >Añadir una nueva frase</h2>
+            <input
+            type="text"
+            name="character"
+            id="character"
+            placeholder="Personaje"
+            onInput={handleNewQuote}
+            value={newQuote.character}
+            />
+          <input
+            type="text"
+            name="quote"
+            id="quote"
+            placeholder="Frase"
+            onInput={handleNewQuote}
+            value={newQuote.quote}
+            />
+          <input
+            type="submit"
+            value="Añadir una nueva frase"
+            onClick={handleClick}
+            />
+        </form>
       </main>
     </div>
   );
