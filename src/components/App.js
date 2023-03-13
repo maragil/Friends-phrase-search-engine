@@ -2,29 +2,40 @@
 import '../styles/App.scss';
 import phrases from '../data/phrases.json';
 import { useState } from 'react';
-
-
 /* SECCIÓN DEL COMPONENTE */
 function App() {
   /* VARIABLES ESTADO (DATOS) */
   const [allData, setAllData] = useState(phrases);
   const [searchQuote, setSearchQuote] = useState('');
   const [filterCharacter, setFilterCharacter] = useState('all');
+
   /* FUNCIONES HANDLER */
   const handleFilterQuote = (ev) => {
     setSearchQuote(ev.target.value);
-  }
+  };
+  const handleFilterCharacter = (ev) => {
+    setFilterCharacter(ev.target.value);
+  };
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
   const renderList = () => {
     return allData
+    .filter((eachQuote) => {
+      if(filterCharacter === 'all'){
+        return true;
+      }else if (eachQuote.character.toLocaleLowerCase().includes(filterCharacter.toLocaleLowerCase())) {
+        return true;
+      }else{
+        return false;
+      }
+    })
     .filter((eachQuote) => eachQuote.quote.toLocaleLowerCase().includes(searchQuote.toLocaleLowerCase()))
     .map((eachQuote, index) => (
-    <li key={index} className='li'>
-      <p>Personaje: {eachQuote.character}</p>
-      <p>Frase: {eachQuote.quote}</p>
-    </li>
-  ))
-};
+      <li key={index} className='li'>
+        <p>Personaje: {eachQuote.character}</p>
+        <p>Frase: {eachQuote.quote}</p>
+      </li>
+    ))
+  };
   /* HTML */
   return (
     <div className="page">
@@ -49,7 +60,7 @@ function App() {
               <select
                 id="character"
                 onChange={handleFilterCharacter}
-                >
+                value={filterCharacter}>
                 <option value="all">Todos</option>
                 <option value="Joey">Joey</option>
                 <option value="Rachel">Rachel</option>
