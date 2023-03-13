@@ -1,26 +1,42 @@
 /* SECCIÓN DE IMPORT */
-
-// - De React
-// - Nuestros
-// - Sass
 import '../styles/App.scss';
-// - Imágenes
+import phrases from '../data/phrases.json';
+import { useState } from 'react';
+
 
 /* SECCIÓN DEL COMPONENTE */
 function App() {
   /* VARIABLES ESTADO (DATOS) */
-
-  /* EFECTOS (día 5) */
-
+  const [allData, setAllData] = useState(phrases);
   /* FUNCIONES HANDLER */
 
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
-
+  const renderList = () => {
+    return allData
+    .map((eachQuote, index) => (
+    <li key={index} className='li'>
+      <p>Personaje: {eachQuote.character}</p>
+      <p>Frase: {eachQuote.quote}</p>
+    </li>
+  ))
+};
   /* HTML */
-  return <div className="App">{/* Aquí va el HTML */}</div>;
+  return (
+    <div className="page">
+      {/* header */}
+      <header>
+        <h1>Frases de Friends</h1>
+      </header>
+      {/* main filter*/}
+      <main>
+        {/*phrases list */}
+        <section>
+          <ul className='ul'>{renderList()}</ul>
+        </section>
+      </main>
+    </div>
+  );
 }
 
-/* PROP-TYPES */
-
-/* EXPORT DEL COMPONENTE */
 export default App;
+
