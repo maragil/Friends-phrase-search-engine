@@ -1,11 +1,11 @@
 /* SECCIÓN DE IMPORT */
 import '../styles/App.scss';
-import phrases from '../data/phrases.json';
-import { useState } from 'react';
+// import phrases from '../data/phrases.json';
+import { useEffect, useState } from 'react';
 /* SECCIÓN DEL COMPONENTE */
 function App() {
   /* VARIABLES ESTADO (DATOS) */
-  const [allData, setAllData] = useState(phrases);
+  const [allData, setAllData] = useState([]);
   const [searchQuote, setSearchQuote] = useState('');//búsqueda por cita
   const [filterCharacter, setFilterCharacter] = useState('all');//filtro por personaje
   const [newQuote, setNewQuote] = useState({ //nueva frase + personaje
@@ -14,10 +14,18 @@ function App() {
   });
   // const [errorMsg, setErrorMsg] = useState('')
 
-  /* FUNCIONES HANDLER */
+  useEffect(() => {
+    fetch ('https://beta.adalab.es/curso-intensivo-fullstack-recursos/apis/quotes-friends-tv-v1/quotes.json')
+      .then(response => response.json())
+      .then(data => {
+        setAllData(data);
+      });
+    }, []);
+
+      /* FUNCIONES HANDLER */
   const handleFilterQuote = (ev) => {
-    setSearchQuote(ev.target.value);
-  };
+      setSearchQuote(ev.target.value);
+    };
 
   const handleFilterCharacter = (ev) => {
     ev.preventDefault();
