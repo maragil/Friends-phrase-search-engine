@@ -12,7 +12,6 @@ function App() {
     quote: '',
     character: '',
   });
-  // const [errorMsg, setErrorMsg] = useState('')
 
   useEffect(() => {
     fetch ('https://beta.adalab.es/curso-intensivo-fullstack-recursos/apis/quotes-friends-tv-v1/quotes.json')
@@ -41,9 +40,6 @@ function App() {
       if (newQuote.quote !== '' && newQuote.character !== ''){
         setAllData([...allData, newQuote]);//quédate con lo q ya tienes y añade newQuote
         setNewQuote ({quote: "", character: "",});//limpia los inputs
-      }else{
-      const errorMsg = 'Tienes que rellenar los dos campos';
-      console.log(errorMsg);
     }
   }
 
