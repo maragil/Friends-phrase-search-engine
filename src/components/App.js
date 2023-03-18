@@ -79,15 +79,19 @@ function App() {
       <form>
           <fieldset>
             <legend>Filtrar por frase</legend>
+            <label htmlFor="quote">
             <input
               name="search"
+              id='quote'
               placeholder="Filtrar por frase"
               onInput={handleFilterQuote}
               value={searchQuote}
               />
+            </label>
           </fieldset>
           <fieldset>
             <legend>Filtrar por personaje</legend>
+            <label htmlFor="character">
               <select
                 id="character"
                 onChange={handleFilterCharacter}
@@ -100,6 +104,7 @@ function App() {
                 <option value="Ross">Ross</option>
                 <option value="Monica">Monica</option>
               </select>
+            </label>
           </fieldset>
         </form>
         {/*phrases list */}
