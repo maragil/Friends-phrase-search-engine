@@ -1,5 +1,6 @@
 /* SECCIÓN DE IMPORT */
 import '../styles/App.scss';
+import sofa from '../img/friends-logo.png'
 // import phrases from '../data/phrases.json';
 import { useEffect, useState } from 'react';
 /* SECCIÓN DEL COMPONENTE */
@@ -65,16 +66,20 @@ function App() {
   return (
     <div className="page">
       {/* header */}
-      <header>
-        <h1>Frases de Friends</h1>
+      <header className='header'>
+        <div className='div-img-header'>
+          <img src={sofa} alt="Logo de la serie"        className='img-header'/>
+        </div>
+        <h1 className='title'>Busca tus frases de Friends favoritas</h1>
       </header>
       {/* main filter*/}
       <main>
-      <form>
-          <fieldset>
-            <legend>Filtrar por frase</legend>
+      <form className='filter-form'>
+          <fieldset className='fieldset'>
+            <legend className='legend'>Filtra por frase</legend>
             <label htmlFor="quote">
             <input
+            className='input'
               name="search"
               id='quote'
               placeholder="Filtrar por frase"
@@ -83,10 +88,11 @@ function App() {
               />
             </label>
           </fieldset>
-          <fieldset>
-            <legend>Filtrar por personaje</legend>
+          <fieldset className='fieldset'>
+            <legend className='legend'>Filtra por personaje</legend>
             <label htmlFor="character">
               <select
+              className='select'
                 id="character"
                 onChange={handleFilterCharacter}
                 value={filterCharacter}>
@@ -101,13 +107,10 @@ function App() {
             </label>
           </fieldset>
         </form>
-        {/*phrases list */}
-        <section>
-          <ul className='ul'>{renderList()}</ul>
-        </section>
+
         {/* new phrase */}
-        <form>
-          <h2 >Añadir una nueva frase</h2>
+        <form className='add-form'>
+          <h2 >Añade una nueva frase</h2>
             <input
             type="text"
             name="character"
@@ -130,6 +133,11 @@ function App() {
             onClick={handleClick}
             />
         </form>
+        {/*phrases list */}
+        <section>
+          <ul className='ul'>{renderList()}</ul>
+        </section>
+        
       </main>
     </div>
   );
