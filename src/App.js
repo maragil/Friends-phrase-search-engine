@@ -1,6 +1,6 @@
 /* SECCIÓN DE IMPORT */
-import '../styles/App.scss';
-import sofa from '../img/friends-logo.png'
+import './styles/App.scss';
+import sofa from './img/friends-logo.png'
 // import phrases from '../data/phrases.json';
 import { useEffect, useState } from 'react';
 /* SECCIÓN DEL COMPONENTE */
@@ -57,14 +57,14 @@ function App() {
     .filter((eachQuote) => eachQuote.quote.toLocaleLowerCase().includes(searchQuote.toLocaleLowerCase()))
     .map((eachQuote, index) => (
       <li key={index} className='li'>
-        <p>Personaje: {eachQuote.character}</p>
-        <p>Frase: {eachQuote.quote}</p>
+        <p className='quote'>Personaje: {eachQuote.character}</p>
+        <p>Frase: <p>{eachQuote.quote}</p></p>
       </li>
     ))
   };
   /* HTML */
   return (
-    <div className="page">
+    <div>
       {/* header */}
       <header className='header'>
         <div className='div-img-header'>
@@ -109,9 +109,10 @@ function App() {
         </form>
 
         {/* new phrase */}
-        <form className='add-form'>
-          <h2 >Añade una nueva frase</h2>
+        <form className='add-phrase' >
+          <h2 className='add-title'>Añade una nueva frase</h2>
             <input
+            className='input'
             type="text"
             name="character"
             id="character"
@@ -120,6 +121,7 @@ function App() {
             value={newQuote.character}
             />
           <input
+          className='input'
             type="text"
             name="quote"
             id="quote"
@@ -128,17 +130,43 @@ function App() {
             value={newQuote.quote}
             />
           <input
+          className='add-btn'
             type="submit"
             value="Añadir una nueva frase"
             onClick={handleClick}
             />
         </form>
         {/*phrases list */}
-        <section>
+        <section className='phrases-section'>
           <ul className='ul'>{renderList()}</ul>
         </section>
-        
       </main>
+      <footer class="footer">
+                {/* LOGO */}
+                <p
+                    class= "footer-logo" >&#8826; MaraGil &#x2571;&#x227B;</p>
+                {/* Social nerworks */}
+                <ul class="footer-ul">
+                    <li class="footer-items">
+                        <a  href="https://github.com/maragil"
+                            target="_blank"
+                            class="footer-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a  href="https://www.linkedin.com/in/maria-araujo-gil84/"
+                            target="_blank"
+                            class="footer-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a  href="http://"
+                            target="_blank"
+                            class="footer-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+
+        </footer>
     </div>
   );
 }

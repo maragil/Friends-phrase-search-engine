@@ -25,6 +25,22 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+.add-phrase{
+    margin-block: 50px;
+    text-align: center;
+}
+
+.add-title{
+    color: cornflowerblue;
+}
+
+.add-btn{
+margin-left: 20px;
+padding-inline: 10px;
+font-weight: 600;
+}
+
 .fieldset{
     width: 400px;
     font-weight: 600;
@@ -46,10 +62,47 @@
     margin-left: 20px;
     padding-left: 10px;
 }
+
+.phrases-section{
+    font-size: 30px;
+}
 .ul{
     list-style: none;
 }
 
 .li{
     margin: 20px;
+}
+
+.quote{
+    color: goldenrod;
+}
+
+.footer{
+    background-color: crimson;
+    padding-block: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 50px;
+}
+
+.footer-logo{
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer-ul{
+    list-style: none;
+}
+
+.footer-icon{
+    font-weight: bold;
+    margin-right: 20px;
+    text-decoration: none;
+}
+.fab{
+    color: black;
+    font-size: 40px;
 }
