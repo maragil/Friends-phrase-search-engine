@@ -158,7 +158,7 @@ function App() {
                             class="footer-icon">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a  href="http://"
+                        <a  href="https://twitter.com/araujomaria84"
                             target="_blank"
                             class="footer-icon">
                             <i class="fab fa-twitter"></i>
