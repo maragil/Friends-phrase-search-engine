@@ -73,7 +73,7 @@ function App() {
         <h1 className='title'>Busca tus frases de Friends favoritas</h1>
       </header>
       {/* main filter*/}
-      <main>
+      <main className='main'>
       <form className='filter-form'>
           <fieldset className='fieldset'>
             <legend className='legend'>Filtra por frase</legend>
@@ -150,16 +150,19 @@ function App() {
                     <li class="footer-items">
                         <a  href="https://github.com/maragil"
                             target="_blank"
+                            rel="noreferrer"
                             class="footer-icon">
                             <i class="fab fa-github"></i>
                         </a>
                         <a  href="https://www.linkedin.com/in/maria-araujo-gil84/"
                             target="_blank"
+                            rel="noreferrer"
                             class="footer-icon">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a  href="https://twitter.com/araujomaria84"
                             target="_blank"
+                            rel="noreferrer"
                             class="footer-icon">
                             <i class="fab fa-twitter"></i>
                         </a>
