@@ -28,6 +28,18 @@ La aplicación permite buscar entre una serie de frases memorables y divertidas 
     npm start
     ```
 
+## 🟤 Despliegue 
+
+La aplicación está configurada para que se pueda desplegar de manera sencilla en GitHub Pages siguiendo los siguientes pasos:
+  1. Asegúrate de que todos los cambios necesarios estén confirmados y guardados en tu repositorio.
+  2. Ejecuta el siguiente comando en tu terminal para generar los archivos necesarios para el despliegue:
+     
+     ```bash
+     npm run docs
+     
+     ```
+  3. Una vez completado, los archivos de construcción se encontrarán en la carpeta `docs`.
+
 # 🟡 Scripts
 
 - `githubpages`: Prepara la aplicación para su publicación en GitHub Pages al eliminar y reemplazar los directorios `build` y `docs`, ejecuta la compilación, mueve los archivos a `docs` y realiza un commit con un mensaje específico antes de hacer el push.
