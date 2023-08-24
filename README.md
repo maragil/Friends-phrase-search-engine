@@ -46,5 +46,9 @@ Este proyecto ha sido creado utilizando una combinación de herramientas y tecno
  <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="vscode" width="40" height="40"/> </a>
 </p>
 
+## 🟣 CONTACTO
+¡Espero que te haya gustado esta aplicación! 💚
 
-¡Espero que te haya gustado mi proyecto! 💚
+Este y otros proyetos los puedes encontrar en mi porfolio: <https://www.maragil.com> 
+
+<!--<a href="https://www.maragil.com" target="_blank" rel="noreferrer"> <img src="images/porfolio(tiny).png" alt="html5" width="300" height="150"/>-->
