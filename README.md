@@ -61,6 +61,6 @@ Este proyecto ha sido creado utilizando una combinación de herramientas y tecno
 ## 🟣 CONTACTO
 ¡Espero que te haya gustado esta aplicación! 💚
 
-Este y otros proyetos los puedes encontrar en mi porfolio: <https://www.maragil.com> 
+Este y otros proyectos los puedes encontrar en mi porfolio: <https://www.maragil.com> 
 
 <!--<a href="https://www.maragil.com" target="_blank" rel="noreferrer"> <img src="images/porfolio(tiny).png" alt="html5" width="300" height="150"/>-->
