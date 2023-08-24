@@ -30,7 +30,7 @@ La aplicación permite buscar entre una serie de frases memorables y divertidas 
 
 # 🟡 Scripts
 
-- `githubpages`: Automatiza la publicación en GitHub Pages al eliminar y reemplazar los directorios `build` y `docs`, ejecuta la compilación, mueve los archivos a `docs` y realiza un commit con un mensaje específico antes de hacer el push.
+- `githubpages`: Prepara la aplicación para su publicación en GitHub Pages al eliminar y reemplazar los directorios `build` y `docs`, ejecuta la compilación, mueve los archivos a `docs` y realiza un commit con un mensaje específico antes de hacer el push.
 
 ## 🔴 Herramientas y Tecnologías
 
